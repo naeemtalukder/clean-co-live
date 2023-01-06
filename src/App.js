@@ -1,12 +1,22 @@
+import Navbar from "./components/Navbar";
+import About from "./page/About";
+import Contact from "./page/Contact";
+import Home from "./page/Home";
+import Login from "./page/Login";
+import Services from "./page/Services";
+
 
 function App() {
   return (
-    <div>
-      <h1 class="text-3xl font-bold text-secondary underline">
-        Clean Co.
-      </h1>
-      <button class="btn btn-error text-primary">Button</button>
-    </div>
+    <>
+      <Navbar>
+        <Home/>
+        <Login/>
+        <Contact/>
+        <About/>
+        <Services/>
+      </Navbar>
+    </>
   );
 }
 
