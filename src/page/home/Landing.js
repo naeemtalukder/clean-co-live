@@ -6,13 +6,28 @@ const Landing = () => {
         <div className="hero h-screen lg:h-[60vh] bg-accent relative z-10 mt-16">
             <div className="hero-content flex-col lg:flex-row">
                 <div>
-                    <p data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000" className="px-1 text-xl">Best Quality</p>
-                    <h1 data-aos="fade-right" data-aos-delay="400" data-aos-duration="900" className="text-5xl font-bold">Professional Cleaning Service</h1>
-                    <p data-aos="fade-right" data-aos-delay="600" data-aos-duration="800" className="py-6 px-1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has</p>
-                    <button  data-aos-delay="1200" data-aos="zoom-in" className="btn btn-primary mx-1">Get Started</button>
+                    <p data-aos="fade-right" 
+                    data-aos-delay="200" 
+                    data-aos-duration="1000" 
+                    className="px-1 text-xl"
+                    >Best Quality</p>
+                    <h1 data-aos="fade-right" 
+                    data-aos-delay="400" 
+                    data-aos-duration="900" 
+                    className="text-5xl font-bold"
+                    >Professional Cleaning Service</h1>
+                    <p data-aos="fade-right" 
+                    data-aos-delay="600" 
+                    data-aos-duration="800" 
+                    className="py-6 px-1"
+                    >Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has</p>
+                    <button  data-aos-delay="1200" 
+                    data-aos="zoom-in" 
+                    className="btn btn-primary mx-1">Get Started</button>
                 </div>
                 <div className="h-[60vh] shrink-0">
-                    <img src="https://i.ibb.co/6RX8wcH/bucketgirl-png.png" className="h-full" alt="" />
+                    <img src="https://i.ibb.co/6RX8wcH/bucketgirl-png.png" 
+                    className="h-full" alt="" />
                 </div>
             </div>
         </div>
