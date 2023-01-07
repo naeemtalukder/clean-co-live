@@ -1,8 +1,8 @@
-import Home from "../page/home/Home";
 import Contact from "../page/Contact";
 import About from "../page/About";
 import Login from "../page/Login";
 import Services from "../page/Services";
+import Home from "../page/home/Home";
 
 export const publicRoute = [
     {path:"/", name: "Home", Component: Home},
