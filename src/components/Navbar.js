@@ -63,12 +63,11 @@ const Navbar = ({children}) => {
       <label for="my-drawer-3" class="drawer-overlay"></label> 
       <ul class="menu p-4 overflow-y-auto w-80 bg-base-100">
         {/* <!-- Sidebar content here --> */}
-            <li><a>Home</a></li>
-            <li><a>About</a></li>
-            <li><a>Services</a></li>
-            <li><a>Contact</a></li>
-            <li><a>Login</a></li>
-        
+            <li><NavLink to="/" className='rounded-lg'>Home</NavLink></li>
+            <li><NavLink to="/about" className='rounded-lg'>About</NavLink></li>
+            <li><NavLink to="/services" className='rounded-lg'>Services</NavLink></li>
+            <li><NavLink to="/contact" className='rounded-lg'>Contact</NavLink></li>
+            <li><NavLink to="/login" className='rounded-lg'>Login</NavLink></li>
       </ul>
       
     </div>
