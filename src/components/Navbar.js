@@ -68,6 +68,15 @@ const Navbar = ({children}) => {
             <li><NavLink to="/services" className='rounded-lg'>Services</NavLink></li>
             <li><NavLink to="/contact" className='rounded-lg'>Contact</NavLink></li>
             <li><NavLink to="/login" className='rounded-lg'>Login</NavLink></li>
+            <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+              <div className="collapse-title text-xl font-medium">
+                Book Now
+              </div>
+              <div className="collapse-content"> 
+                <li><NavLink to="/contact" className='rounded-lg'>Quick Book</NavLink></li>
+                <li><NavLink to="/login" className='rounded-lg'>Pre Book</NavLink></li>
+              </div>
+            </div>
       </ul>
       
     </div>
