@@ -4,6 +4,8 @@ import { publicRoute } from "./routes/publicRoute";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from "react";
+import Services from "./page/Services";
+import PrivateRoute from "./authentication/PrivateRoute";
 
 
 function App() {
@@ -23,6 +25,7 @@ function App() {
           {publicRoute.map(({path, Component}, index) => (
             <Route key={index} path={path} element={<Component />} />
           ))}
+          <Route path="/services" element={<PrivateRoute><Services/></PrivateRoute>}/>
         </Routes>
       </Navbar>
     </>
