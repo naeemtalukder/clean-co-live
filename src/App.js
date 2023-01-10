@@ -10,6 +10,8 @@ import PrivateRoute from "./authentication/PrivateRoute";
 import { privateRoute } from "./routes/privateRoute";
 import AdminRoute from "./authentication/AdminRoute";
 import Dashboard from "./page/dashboard/Dashboard";
+import AddAdmin from "./page/dashboard/AddAdmin";
+import AddServices from "./page/dashboard/AddServices";
 
 
 function App() {
@@ -30,7 +32,10 @@ function App() {
           ))}
           </Route>
           <Route element={<AdminRoute/>}>
-            <Route path="/dashboard" element={<Dashboard/>} />
+            <Route path="/dashboard" element={<Dashboard/>} >
+              <Route path="/dashboard/add-admin" element={<AddAdmin/>} />
+              <Route path="/dashboard/add-services" element={<AddServices/>} />
+            </Route>
           </Route>
         </Routes>
       </Navbar>
