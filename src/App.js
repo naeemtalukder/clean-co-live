@@ -8,6 +8,8 @@ import { useEffect } from "react";
 import PrivateRoute from "./authentication/PrivateRoute";
 // import About from "./page/About";
 import { privateRoute } from "./routes/privateRoute";
+import AdminRoute from "./authentication/AdminRoute";
+import Dashboard from "./page/dashboard/Dashboard";
 
 
 function App() {
@@ -26,6 +28,9 @@ function App() {
           {privateRoute.map(({path, Component}, index) => (
             <Route key={index} path={path} element={<Component />} />
           ))}
+          </Route>
+          <Route element={<AdminRoute/>}>
+            <Route path="/dashboard" element={<Dashboard/>} />
           </Route>
         </Routes>
       </Navbar>

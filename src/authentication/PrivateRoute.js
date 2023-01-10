@@ -3,7 +3,6 @@ import { Navigate, Outlet, useLocation } from 'react-router-dom';
 
 const PrivateRoute = () => {
     const location =useLocation();
-
     const user = false;
 
     if(!user) {

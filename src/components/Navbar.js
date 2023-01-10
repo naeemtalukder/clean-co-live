@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import useAdmin from '../hooks/useAdmin';
 
 
 const Navbar = ({children}) => {
-  const [dark, setDark]=useState(false);
-  console.log(dark);
+  const [dark, setDark] = useState(false);
+  
+  const [admin] = useAdmin();
 
   return (
     <div class="drawer drawer-end" data-theme={dark ?"dark": "light"}>
@@ -23,12 +25,13 @@ const Navbar = ({children}) => {
           <ul class="menu menu-horizontal gap-x-2">
             {/* <!-- Navbar menu content here --> */}
             <li><NavLink to="/" className='rounded-lg'>Home</NavLink></li>
+            {admin && (<li><NavLink to="/dashboard" className='rounded-lg'>Dashboard</NavLink></li>)}
             <li><NavLink to="/about" className='rounded-lg'>About</NavLink></li>
             <li><NavLink to="/services" className='rounded-lg'>Services</NavLink></li>
             <li><NavLink to="/contact" className='rounded-lg'>Contact</NavLink></li>
             <li><NavLink to="/login" className='rounded-lg'>Login</NavLink></li>
             <li className="dropdown dropdown-hover dropdown-end">
-              <label tabIndex={0} className="btn btn-outline rounded-lg">Hover</label>
+              <label tabIndex={0} className="btn btn-outline rounded-lg">Book Now</label>
                 <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
                   <li><a>Item 1</a></li>
                   <li><a>Item 2</a></li>
@@ -64,6 +67,7 @@ const Navbar = ({children}) => {
       <ul class="menu p-4 overflow-y-auto w-80 bg-base-100">
         {/* <!-- Sidebar content here --> */}
             <li><NavLink to="/" className='rounded-lg'>Home</NavLink></li>
+            <li><NavLink to="/dashboard" className='rounded-lg'>Dashboard</NavLink></li>
             <li><NavLink to="/about" className='rounded-lg'>About</NavLink></li>
             <li><NavLink to="/services" className='rounded-lg'>Services</NavLink></li>
             <li><NavLink to="/contact" className='rounded-lg'>Contact</NavLink></li>
