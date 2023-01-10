@@ -29,7 +29,7 @@ const Navbar = ({children}) => {
           <ul class="menu menu-horizontal gap-x-2">
             {/* <!-- Navbar menu content here --> */}
             <li><NavLink to="/" className='rounded-lg'>Home</NavLink></li>
-            {admin && (<li><NavLink to="/dashboard" className='rounded-lg'>Dashboard</NavLink></li>)}
+            {admin && (<li><NavLink to="/dashboard/add-services" className='rounded-lg'>Dashboard</NavLink></li>)}
             <li><NavLink to="/about" className='rounded-lg'>About</NavLink></li>
             <li><NavLink to="/services" className='rounded-lg'>Services</NavLink></li>
             <li><NavLink to="/contact" className='rounded-lg'>Contact</NavLink></li>

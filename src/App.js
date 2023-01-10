@@ -33,8 +33,8 @@ function App() {
           </Route>
           <Route element={<AdminRoute/>}>
             <Route path="/dashboard" element={<Dashboard/>} >
-              <Route path="/dashboard/add-admin" element={<AddAdmin/>} />
-              <Route path="/dashboard/add-services" element={<AddServices/>} />
+              <Route path="add-admin" element={<AddAdmin/>} />
+              <Route path="add-services" element={<AddServices/>} />
             </Route>
           </Route>
         </Routes>
