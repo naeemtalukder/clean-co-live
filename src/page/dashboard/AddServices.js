@@ -1,29 +1,44 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
+import fetcher from '../../api';
 
 const AddServices = () => {
+
+    const {register, handleSubmit} = useForm();
+
+    const onSubmit = async(data) => {
+        const res = await fetcher.post("add-services", data);
+        console.log(res);
+    }
     return (
-        <div className="hero min-h-screen bg-accent mt-8">
+        <div className="h-screen w-full bg-accent mt-8">
         <div className="hero-content">
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                 <div className="card-body">
                     <h1 className='text-2xl text-center'>Add Services</h1>
+                    <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Service Name</span>
                         </label>
-                        <input type="text" placeholder="email" className="input input-bordered" />
+                        <input type="text" 
+                        className="input input-bordered"
+                        {...register("serviceName")}
+                         />
                     </div>
                     <div className="form-control">
                         <label className="label">
                         <span className="label-text">Service Charge</span>
                         </label>
-                        <input type="text" placeholder="password" className="input input-bordered" />
+                        <input type="text" 
+                        className="input input-bordered" 
+                        {...register("serviceCharge")}
+                        />
                     </div>
                     <div className="form-control mt-6">
-                        <button className="btn btn-primary">Login</button>
+                        <button type='submit' className="btn btn-primary">Add Service</button>
                     </div>
-                    <div className="divider">OR</div>
-                    <button className='btn btn-glass hover:btn-accent'>Login with Google</button>
+                    </form>
                 </div>
             </div>
         </div>
