@@ -1,15 +1,37 @@
+import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import fetcher from '../../api';
 
 const AddServices = () => {
 
-    const {register, handleSubmit} = useForm();
+    const {register, handleSubmit, reset} = useForm();
 
     const onSubmit = async(data) => {
         const res = await fetcher.post("add-services", data);
         console.log(res);
-    }
+        reset();
+    };
+
+    const handleUploadImage = (event) => {
+        const image = event.target.file[0];
+
+        const formData = new FormData();
+        formData.set("image", image);
+
+       axios
+       .post
+       ("https://api.imgbb.com/1/upload?key=ab4e0565ec3f07e0c94aead734097dec", 
+       formData
+       )
+       .then((res) => {
+        console.log(res);
+       })
+       .catch((error) => {
+        console.log(error);
+       });
+    };
+
     return (
         <div className="h-screen w-full bg-accent mt-8">
         <div className="hero-content">
@@ -33,6 +55,15 @@ const AddServices = () => {
                         <input type="text" 
                         className="input input-bordered" 
                         {...register("serviceCharge")}
+                        />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                        <span className="label-text">Image</span>
+                        </label>
+                        <input type="file" 
+                        className="input input-bordered" 
+                        onChange={handleUploadImage}
                         />
                     </div>
                     <div className="form-control mt-6">
